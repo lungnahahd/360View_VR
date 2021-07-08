@@ -23,6 +23,6 @@ public class raycast : MonoBehaviour
         if(Physics.Raycast(transform.position, forward, out hit)){
             Debug.Log("HIT");
         }
-        Debug.DrawRay(transform.position, forward, Color.blue)
+        Debug.DrawRay(transform.position, forward, Color.blue);
     }
 }
