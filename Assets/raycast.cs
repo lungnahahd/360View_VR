@@ -22,8 +22,13 @@ public class raycast : MonoBehaviour
         RaycastHit hit;
         Vector3 forward = transform.TransformDirection(Vector3.forward *1000);
         if(Physics.Raycast(transform.position, forward, out hit)){
-            hit.transform.GetComponent<Button>().onClick.Invoke();
-            Debug.Log("HIT");
+            try{
+                hit.transform.GetComponent<Button>().onClick.Invoke();
+            }catch{
+              Debug.Log("HIT");  
+            }
+            //hit.transform.GetComponent<Button>().onClick.Invoke();
+            //Debug.Log("HIT");
         }
         Debug.DrawRay(transform.position, forward, Color.blue);
     }
