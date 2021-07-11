@@ -686,6 +686,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ccb27bfc974b34584b07a67b6c4369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip1: {fileID: 32900000, guid: 85e86e5a684d1e441ac02ae21a176ded, type: 3}
+  clip2: {fileID: 32900000, guid: 170807b9e6fc6d84ba09b1b1fe13d454, type: 3}
+  world: {fileID: 0}
+  button1: {fileID: 0}
+  button2: {fileID: 0}
 --- !u!4 &1539750648
 Transform:
   m_ObjectHideFlags: 0

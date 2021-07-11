@@ -13,7 +13,7 @@ public class ButtonAction : MonoBehaviour
     public GameObject button1;
     public GameObject button2;
     public void changescene(){
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Travel");
     }
 
     public void showdance(){
