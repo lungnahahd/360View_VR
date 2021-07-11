@@ -24,16 +24,14 @@ public class raycast : MonoBehaviour
         RaycastHit hit;
         Vector3 forward = transform.TransformDirection(Vector3.forward *1000);
         if(Physics.Raycast(transform.position, forward, out hit)){
-            try{
-                timegone = timegone + Time.deltaTime;
-                gauge.fillAmount = timegone / 3;
-                if(timegone >= 3){
-                    hit.transform.GetComponent<Button>().onClick.Invoke();
-                }
-                //hit.transform.GetComponent<Button>().onClick.Invoke();
-            }catch{
-              Debug.Log("HIT");  
+            timegone = timegone + Time.deltaTime;
+            gauge.fillAmount = timegone / 3;
+            if(timegone >= 3){
+                hit.transform.GetComponent<Button>().onClick.Invoke();
             }
+        }else{
+            timegone = 0;
+            gauge.fillAmount = timegone / 3;
         }
         Debug.DrawRay(transform.position, forward, Color.blue);
     }
