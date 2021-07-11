@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class raycast : MonoBehaviour
 {
+    public Image gauge;
+    float timegone;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +25,15 @@ public class raycast : MonoBehaviour
         Vector3 forward = transform.TransformDirection(Vector3.forward *1000);
         if(Physics.Raycast(transform.position, forward, out hit)){
             try{
-                hit.transform.GetComponent<Button>().onClick.Invoke();
+                timegone = timegone + Time.deltaTime;
+                gauge.fillAmount = timegone / 3;
+                if(timegone >= 3){
+                    hit.transform.GetComponent<Button>().onClick.Invoke();
+                }
+                //hit.transform.GetComponent<Button>().onClick.Invoke();
             }catch{
               Debug.Log("HIT");  
             }
-            //hit.transform.GetComponent<Button>().onClick.Invoke();
-            //Debug.Log("HIT");
         }
         Debug.DrawRay(transform.position, forward, Color.blue);
     }
